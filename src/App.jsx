@@ -366,13 +366,17 @@ function Contact() {
 
 function Footer() {
   return <footer>
-    <div className="container footer-grid">
-      <div><Logo light /><p>Professional, affordable websites for small businesses across Ireland.</p></div>
-      <div><strong>Quick links</strong>{navLinks.map(l => <a key={l} href={`#${l.toLowerCase()}`}>{l}</a>)}</div>
-      <div><strong>What we build</strong><a href="#work">Starter websites</a><a href="#work">Professional websites</a><a href="#work">Trades websites</a><a href="#work">Local service websites</a><a href="#work">Consultant websites</a></div>
-      <div><strong>Get in touch</strong><a href={`mailto:${business.email}`}>{business.email}</a><a href={`https://wa.me/${business.whatsapp.replace(/\D/g, "")}`} target="_blank" rel="noreferrer">Message on WhatsApp</a><span>Ireland</span></div>
+    <div className="container footer-simple">
+      <div>
+        <Logo light />
+        <p>Professional, affordable websites for small businesses across Ireland.</p>
+      </div>
+      <div className="footer-contact">
+        <a href={`mailto:${business.email}`}>{business.email}</a>
+        <a href={`https://wa.me/${business.whatsapp.replace(/\D/g, "")}`} target="_blank" rel="noreferrer">Message on WhatsApp</a>
+      </div>
+      <div className="footer-bottom"><span>© {new Date().getFullYear()} {business.name}. All rights reserved.</span><span>Built with care in Ireland.</span></div>
     </div>
-    <div className="container footer-bottom"><span>© {new Date().getFullYear()} {business.name}. All rights reserved.</span><span>Built with care in Ireland.</span></div>
   </footer>;
 }
 
