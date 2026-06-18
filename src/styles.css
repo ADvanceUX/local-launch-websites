@@ -23,7 +23,7 @@ body, input, select, textarea, button { font-family: "DM Sans", sans-serif; }
 a { color: inherit; text-decoration: none; }
 button, input, select, textarea { font: inherit; }
 .container { width: min(1160px, calc(100% - 40px)); margin: 0 auto; }
-.section { padding: 92px 0; opacity: 0; transform: translateY(18px); transition: opacity .65s ease, transform .65s ease; }
+.section { padding: 82px 0; opacity: 0; transform: translateY(18px); transition: opacity .65s ease, transform .65s ease; }
 .section.visible { opacity: 1; transform: none; }
 h1, h2, h3, .logo { font-family: "Manrope", sans-serif; }
 h1, h2, h3, p { margin-top: 0; }
@@ -32,7 +32,7 @@ h2 span { color: var(--blue); }
 p { color: var(--muted); line-height: 1.72; }
 .eyebrow { display: inline-flex; align-items: center; gap: 7px; color: var(--blue); text-transform: uppercase; letter-spacing: .15em; font-size: .75rem; font-weight: 800; margin-bottom: 18px; }
 .eyebrow::before { content: ""; width: 20px; height: 2px; background: currentColor; }
-.section-heading { max-width: 670px; margin-bottom: 42px; }
+.section-heading { max-width: 670px; margin-bottom: 36px; }
 .section-heading p { font-size: 1.04rem; max-width: 610px; }
 .section-heading.center { margin-left: auto; margin-right: auto; text-align: center; }
 .section-heading.center p { margin-left: auto; margin-right: auto; }
@@ -155,19 +155,22 @@ nav > a:not(.button):hover { color: var(--blue); }
 .sample-proof { min-height: 65px; padding: 0 40px; display: flex; align-items: center; justify-content: center; gap: 45px; background: #eef2f3; color: #556a77; font-size: .75rem; font-weight: 700; }
 .sample-proof span { display: flex; align-items: center; gap: 7px; }.sample-proof svg { width: 17px; color: var(--green); }
 
-.process { background: #edf1f2; }
-.process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 65px; }
+.process { background: var(--navy); }
+.process h2, .process h3 { color: white; }
+.process p { color: #b7c5cd; }
+.process .section-heading .eyebrow { color: var(--green); }
+.process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 54px; }
 .process-grid article { padding: 0 27px; position: relative; }
-.process-num { display: grid; place-items: center; position: relative; z-index: 2; width: 52px; height: 52px; border-radius: 50%; background: var(--navy); color: white; font: 800 .78rem "Manrope"; margin-bottom: 26px; }
+.process-num { display: grid; place-items: center; position: relative; z-index: 2; width: 52px; height: 52px; border-radius: 50%; background: var(--blue); color: white; font: 800 .78rem "Manrope"; margin-bottom: 26px; box-shadow: 0 0 0 7px rgba(23,107,219,.14); }
 .process-grid article:first-child { padding-left: 0; }.process-grid article:last-child { padding-right: 0; }
-.process-line { position: absolute; height: 1px; background: #c4cfd4; left: 78px; right: 0; top: 26px; }
+.process-line { position: absolute; height: 1px; background: #315064; left: 78px; right: 0; top: 26px; }
 .process-grid h3 { font-size: 1.08rem; }.process-grid p { font-size: .84rem; }
-.process-cta { margin-top: 65px; background: var(--navy); color: white; border-radius: 14px; padding: 24px 28px; display: flex; align-items: center; gap: 18px; box-shadow: 0 12px 35px rgba(7,30,47,.14); }
+.process-cta { margin-top: 54px; background: white; color: var(--navy); border-radius: 14px; padding: 24px 28px; display: flex; align-items: center; gap: 18px; box-shadow: 0 18px 45px rgba(0,0,0,.18); }
 .process-cta > svg { color: var(--blue); }.process-cta div { display: flex; flex-direction: column; }.process-cta span { color: var(--muted); font-size: .85rem; }.process-cta .button { margin-left: auto; }
-.process-cta span { color: #aebdc6; }
+.process-cta span { color: var(--muted); }
 
 .pricing { background: white; }
-.pricing-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: center; gap: 18px; margin: 65px auto 0; max-width: 800px; }
+.pricing-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: center; gap: 18px; margin: 52px auto 0; max-width: 800px; }
 .price-card { border: 1px solid var(--line); border-radius: 14px; padding: 34px; position: relative; }
 .price-card.featured { background: var(--navy); color: white; padding-top: 46px; padding-bottom: 46px; box-shadow: 0 20px 50px rgba(7,30,47,.18); }
 .price-card h3 { font-size: 1.17rem; margin-bottom: 9px; }.price-card.featured h3 { color: white; }
@@ -238,7 +241,7 @@ footer { background: #041722; color: white; padding: 75px 0 24px; }
 }
 
 @media (max-width: 720px) {
-  .container { width: min(100% - 28px, 1160px); }.section { padding: 68px 0; }
+  .container { width: min(100% - 28px, 1160px); }.section { padding: 58px 0; }
   header { height: 68px; }.menu-button { display: block; }
   nav { display: none; position: absolute; top: 68px; left: 0; right: 0; padding: 22px; background: white; border-bottom: 1px solid var(--line); box-shadow: 0 12px 25px rgba(7,30,47,.1); flex-direction: column; align-items: stretch; }
   nav.open { display: flex; } nav > a:not(.button) { display: block; padding: 5px; }.nav-cta { margin: 5px 0 0; }
@@ -246,7 +249,7 @@ footer { background: #041722; color: white; padding: 75px 0 24px; }
   .hero-visual { width: 95%; }.float-rating { right: -7px; top: 30px; }.float-lead { left: -7px; bottom: 28px; }.mock-site { min-height: 285px; }.mock-hero { height: 220px; grid-template-columns: 1fr; padding: 25px 22px; }.mock-hero strong { font-size: 1.38rem; }.mock-panel { display: none; }.mock-features { height: 58px; }
   .hero-bottom .container { overflow: hidden; justify-content: flex-start; }.hero-bottom span { min-width: max-content; }.hero-bottom b:nth-last-child(-n+4) { display: none; }
   .split, .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 55px; }
-  .section-heading { margin-bottom: 38px; }.problem-row { grid-template-columns: 38px 1fr 30px; }
+  .section-heading { margin-bottom: 30px; }.problem-row { grid-template-columns: 38px 1fr 30px; }
   .why-intro { display: block; }.ireland-badge { width: max-content; margin-bottom: 45px; }.benefit-grid { grid-template-columns: 1fr; }
   .portfolio-head { display: block; margin-bottom: 40px; }.portfolio-head .section-heading { margin-bottom: 20px; }.project-grid { grid-template-columns: 1fr; }.project-image { height: 280px; }
   .sample-modal { padding: 10px; }.sample-window { max-height: calc(100vh - 20px); }.sample-window-bar { grid-template-columns: 1fr 1fr; }.sample-window-bar small { display: none; }
