@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Analytics } from "@vercel/analytics/react";
 import {
   ArrowRight, Check, CheckCircle2, ChevronDown, CircleCheck, Clock3,
   Mail, MapPin, Menu, MessageCircle, MonitorSmartphone, ShieldCheck,
@@ -383,5 +384,5 @@ export default function App() {
     document.querySelectorAll(".section").forEach((el) => observer.observe(el));
     return () => observer.disconnect();
   }, []);
-  return <><Header /><main><Hero /><Problems /><WhyUs /><Portfolio /><Process /><Pricing /><About /><Contact /></main><Footer /></>;
+  return <><Header /><main><Hero /><Problems /><WhyUs /><Portfolio /><Process /><Pricing /><About /><Contact /></main><Footer /><Analytics /></>;
 }
