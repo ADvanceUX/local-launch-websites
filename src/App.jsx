@@ -183,66 +183,19 @@ function WhyUs() {
 }
 
 function Portfolio() {
-  const [activeProject, setActiveProject] = useState(null);
-
-  useEffect(() => {
-    if (!activeProject) return undefined;
-    const closeOnEscape = (event) => {
-      if (event.key === "Escape") setActiveProject(null);
-    };
-    document.body.classList.add("modal-open");
-    window.addEventListener("keydown", closeOnEscape);
-    return () => {
-      document.body.classList.remove("modal-open");
-      window.removeEventListener("keydown", closeOnEscape);
-    };
-  }, [activeProject]);
-
   return <section className="section portfolio" id="work">
     <div className="container">
       <div className="portfolio-head">
-      <SectionHeading eyebrow="Website samples" title="Clear ideas for real-world businesses." body="These concept examples show the style and structure we can create for different types of small business. They are samples, not claimed client projects." />
+      <SectionHeading eyebrow="Website samples" title="Clear ideas for real-world businesses." body="These concept examples show the style and structure we can create for different types of small business." />
         <Button href="#enquiry-form" secondary>Discuss your project</Button>
       </div>
       <div className="project-grid">
         {projects.map((project, i) => <article className={`project-card project-${i + 1}`} key={project.name}>
-          <button className="project-image" type="button" onClick={() => setActiveProject(project)} style={{ backgroundPosition: project.pos }} aria-label={`Open ${project.name}`}>
-            <strong>View website sample</strong>
-          </button>
+          <div className="project-image" style={{ backgroundPosition: project.pos }} />
           <small>{project.type}</small><p>{project.blurb}</p>
         </article>)}
       </div>
     </div>
-    {activeProject && <div className="sample-modal" role="dialog" aria-modal="true" aria-label={`${activeProject.name} preview`}>
-      <button className="modal-backdrop" type="button" onClick={() => setActiveProject(null)} aria-label="Close website preview" />
-      <div className="sample-window">
-        <div className="sample-window-bar">
-          <span><i /><i /><i /></span>
-          <small>Interactive concept preview</small>
-          <button type="button" onClick={() => setActiveProject(null)} aria-label="Close preview"><X /></button>
-        </div>
-        <div className="sample-site">
-          <nav className="sample-nav">
-            <strong>{activeProject.brand}</strong>
-            <span>Home&nbsp;&nbsp; Services&nbsp;&nbsp; About&nbsp;&nbsp; Contact</span>
-            <a href="#enquiry-form" onClick={() => setActiveProject(null)}>Get a quote</a>
-          </nav>
-          <div className="sample-hero">
-            <div className="sample-hero-copy">
-              <small>TRUSTED LOCAL BUSINESS</small>
-              <h3>{activeProject.headline}</h3>
-              <p>{activeProject.subhead}</p>
-              <a href="#enquiry-form" onClick={() => setActiveProject(null)}>Request an enquiry <ArrowRight size={16} /></a>
-            </div>
-            <div className="sample-hero-image" style={{ backgroundPosition: activeProject.pos }} />
-          </div>
-          <div className="sample-services">
-            {activeProject.services.map((service, index) => <div key={service}><span>0{index + 1}</span><strong>{service}</strong><small>Professional, reliable and clearly explained.</small></div>)}
-          </div>
-          <div className="sample-proof"><span><CheckCircle2 /> Mobile friendly</span><span><CheckCircle2 /> Clear service information</span><span><CheckCircle2 /> Built for enquiries</span></div>
-        </div>
-      </div>
-    </div>}
   </section>;
 }
 
