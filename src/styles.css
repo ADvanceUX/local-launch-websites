@@ -125,7 +125,6 @@ nav > a:not(.button):hover { color: var(--blue); }
 .project-image::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 50%, rgba(5,27,40,.32)); transition: background .25s; }
 .project-card:hover .project-image::after, .project-image:focus-visible::after { background: rgba(5,27,40,.12); }
 .project-image:focus-visible { box-shadow: 0 0 0 4px rgba(23,107,219,.25); }
-.project-image > span { position: absolute; left: 15px; top: 15px; z-index: 2; padding: 7px 9px; border-radius: 5px; background: var(--navy); color: white; font-size: .57rem; font-weight: 800; letter-spacing: .06em; }
 .project-image > strong { position: absolute; z-index: 2; left: 18px; bottom: 17px; color: white; font: 700 .8rem "Manrope"; opacity: 0; transform: translateY(8px); transition: opacity .2s, transform .2s; }
 .project-card:hover .project-image > strong, .project-image:focus-visible > strong { opacity: 1; transform: none; }
 .project-card > small { color: var(--blue); text-transform: uppercase; letter-spacing: .12em; font-size: .65rem; font-weight: 800; }

@@ -67,8 +67,8 @@ function Logo({ light = false }) {
   </a>;
 }
 
-function Button({ href, children, secondary = false, className = "" }) {
-  return <a href={href} className={`button ${secondary ? "button-secondary" : ""} ${className}`}>
+function Button({ href, children, secondary = false, className = "", onClick }) {
+  return <a href={href} onClick={onClick} className={`button ${secondary ? "button-secondary" : ""} ${className}`}>
     {children}<ArrowRight size={17} />
   </a>;
 }
@@ -94,7 +94,7 @@ function Header() {
       <Logo />
       <nav className={open ? "open" : ""}>
         {navLinks.map((link) => <a key={link} href={`#${link.toLowerCase()}`} onClick={() => setOpen(false)}>{link}</a>)}
-        <Button href="#enquiry-form" className="nav-cta">Start a Website Enquiry</Button>
+        <Button href="#enquiry-form" className="nav-cta" onClick={() => setOpen(false)}>Start a Website Enquiry</Button>
       </nav>
       <button className="menu-button" onClick={() => setOpen(!open)} aria-label="Toggle navigation">
         {open ? <X /> : <Menu />}
@@ -207,10 +207,9 @@ function Portfolio() {
       <div className="project-grid">
         {projects.map((project, i) => <article className={`project-card project-${i + 1}`} key={project.name}>
           <button className="project-image" type="button" onClick={() => setActiveProject(project)} style={{ backgroundPosition: project.pos }} aria-label={`Open ${project.name}`}>
-            <span>CONCEPT SAMPLE · 0{i + 1}</span>
             <strong>View website sample</strong>
           </button>
-          <small>{project.type}</small><h3>{project.name}</h3><p>{project.blurb}</p>
+          <small>{project.type}</small><p>{project.blurb}</p>
         </article>)}
       </div>
     </div>
