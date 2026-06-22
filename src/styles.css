@@ -205,6 +205,7 @@ nav > a:not(.button):hover { color: var(--blue); }
 .contact-points svg { width: 37px; height: 37px; padding: 9px; border-radius: 8px; background: #13364d; color: var(--green); }
 .contact-points span { font-size: .9rem; }.contact-points small { display: block; color: #8195a2; font-size: .68rem; margin-bottom: 2px; }
 form { background: white; border-radius: 15px; padding: 40px; min-height: 620px; }
+#enquiry-form { scroll-margin-top: 96px; }
 .form-head > span { font-size: .69rem; color: var(--blue); text-transform: uppercase; font-weight: 800; letter-spacing: .15em; }
 .form-head h3 { color: var(--navy); font-size: 1.6rem; margin: 8px 0 5px; }.form-head p { font-size: .8rem; margin-bottom: 27px; }
 .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 17px; }
@@ -272,6 +273,7 @@ footer { background: var(--cream); color: var(--navy); padding: 36px 0 24px; bor
   .process-cta .button { margin: 3px 0 0; width: 100%; }
   .pricing-grid { grid-template-columns: 1fr; }.price-card.featured { order: -1; }.price-card ul { min-height: auto; }
   .about-visual { min-height: 420px; }.about-shape { width: 290px; height: 360px; left: 15px; }.about-note { bottom: 20px; }
+  #enquiry-form { scroll-margin-top: 82px; }
   form { padding: 28px 20px; }.form-grid { grid-template-columns: 1fr; }.form-grid .full { grid-column: auto; }
   .footer-bottom { flex-direction: column; gap: 8px; }
 }

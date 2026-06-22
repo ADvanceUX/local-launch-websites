@@ -94,7 +94,7 @@ function Header() {
       <Logo />
       <nav className={open ? "open" : ""}>
         {navLinks.map((link) => <a key={link} href={`#${link.toLowerCase()}`} onClick={() => setOpen(false)}>{link}</a>)}
-        <Button href="#contact" className="nav-cta">Start a Website Enquiry</Button>
+        <Button href="#enquiry-form" className="nav-cta">Start a Website Enquiry</Button>
       </nav>
       <button className="menu-button" onClick={() => setOpen(!open)} aria-label="Toggle navigation">
         {open ? <X /> : <Menu />}
@@ -112,7 +112,7 @@ function Hero() {
         <h1>Professional websites for small businesses <em>across Ireland.</em></h1>
         <p>Helping Irish tradespeople, sole traders, startups and local businesses build a professional online presence that generates enquiries and wins more customers.</p>
         <div className="hero-actions">
-          <Button href="#contact">Start Your Website Enquiry</Button>
+          <Button href="#enquiry-form">Start Your Website Enquiry</Button>
           <Button href="#work" secondary>See Example Work</Button>
         </div>
         <div className="hero-trust">
@@ -159,7 +159,7 @@ function Problems() {
     <div className="container split">
       <div>
         <SectionHeading eyebrow="Sound familiar?" title={<>Running a business is hard enough. <span>Your website shouldn't be.</span></>} body="When you're busy doing the actual work, getting your business online can feel like another full-time job. We make that part simpler." />
-        <Button href="#contact" secondary>Let's make it easier</Button>
+        <Button href="#enquiry-form" secondary>Let's make it easier</Button>
       </div>
       <div className="problem-list">
         {problems.map((problem, i) => <div className="problem-row" key={problem}><span>{String(i + 1).padStart(2, "0")}</span><p>{problem}</p><Check size={18} /></div>)}
@@ -202,7 +202,7 @@ function Portfolio() {
     <div className="container">
       <div className="portfolio-head">
       <SectionHeading eyebrow="Website samples" title="Clear ideas for real-world businesses." body="These concept examples show the style and structure we can create for different types of small business. They are samples, not claimed client projects." />
-        <Button href="#contact" secondary>Discuss your project</Button>
+        <Button href="#enquiry-form" secondary>Discuss your project</Button>
       </div>
       <div className="project-grid">
         {projects.map((project, i) => <article className={`project-card project-${i + 1}`} key={project.name}>
@@ -226,14 +226,14 @@ function Portfolio() {
           <nav className="sample-nav">
             <strong>{activeProject.brand}</strong>
             <span>Home&nbsp;&nbsp; Services&nbsp;&nbsp; About&nbsp;&nbsp; Contact</span>
-            <a href="#contact" onClick={() => setActiveProject(null)}>Get a quote</a>
+            <a href="#enquiry-form" onClick={() => setActiveProject(null)}>Get a quote</a>
           </nav>
           <div className="sample-hero">
             <div className="sample-hero-copy">
               <small>TRUSTED LOCAL BUSINESS</small>
               <h3>{activeProject.headline}</h3>
               <p>{activeProject.subhead}</p>
-              <a href="#contact" onClick={() => setActiveProject(null)}>Request an enquiry <ArrowRight size={16} /></a>
+              <a href="#enquiry-form" onClick={() => setActiveProject(null)}>Request an enquiry <ArrowRight size={16} /></a>
             </div>
             <div className="sample-hero-image" style={{ backgroundPosition: activeProject.pos }} />
           </div>
@@ -254,7 +254,7 @@ function Process() {
       <div className="process-grid">
         {process.map(([num, title, text], i) => <article key={title}><span className="process-num">{num}</span>{i < 3 && <div className="process-line" />}<h3>{title}</h3><p>{text}</p></article>)}
       </div>
-      <div className="process-cta"><MessageCircle /><div><strong>Not sure where to begin?</strong><span>A quick, no-pressure chat is the perfect place to start.</span></div><Button href="#contact">Book a quick chat</Button></div>
+      <div className="process-cta"><MessageCircle /><div><strong>Not sure where to begin?</strong><span>A quick, no-pressure chat is the perfect place to start.</span></div><Button href="#enquiry-form">Book a quick chat</Button></div>
     </div>
   </section>;
 }
@@ -268,10 +268,10 @@ function Pricing() {
           {price.featured && <span className="popular">MOST POPULAR</span>}
           <h3>{price.name}</h3><p>{price.note}</p><div className="price"><small>From</small><strong>{price.price}</strong></div>
           <ul>{price.features.map((f) => <li key={f}><Check size={17} />{f}</li>)}</ul>
-          <Button href="#contact" secondary={!price.featured}>Get started</Button>
+          <Button href="#enquiry-form" secondary={!price.featured}>Get started</Button>
         </article>)}
       </div>
-      <p className="pricing-note">Updates and ongoing support are also available for websites we build, with costs based on the work involved. <a href="#contact">Tell us what you have in mind</a>.</p>
+      <p className="pricing-note">Updates and ongoing support are also available for websites we build, with costs based on the work involved. <a href="#enquiry-form">Tell us what you have in mind</a>.</p>
     </div>
   </section>;
 }
@@ -288,7 +288,7 @@ function About() {
         <p className="about-lead">Local Launch Websites is based in Ireland and built around one simple idea: small businesses deserve websites that look every bit as professional as the work they do.</p>
         <p>We know the early stages of starting or growing a business can be full of hurdles. Our role is to make the website part feel manageable, with honest guidance, clear communication and no technical runaround.</p>
         <p>Whether you're laying the first foundations or refreshing something you've outgrown, we'll meet you where you are and help you take the next step with confidence.</p>
-        <Button href="#contact">Let's have a chat</Button>
+        <Button href="#enquiry-form">Let's have a chat</Button>
       </div>
     </div>
   </section>;
@@ -343,7 +343,7 @@ function Contact() {
           <div><MapPin /><span><small>Location</small>{business.location}</span></div>
         </div>
       </div>
-      <form action={formspreeEndpoint} method="POST" onSubmit={submit}>
+      <form id="enquiry-form" action={formspreeEndpoint} method="POST" onSubmit={submit}>
         {sent ? <div className="form-success"><CheckCircle2 /><h3>Thanks, your enquiry has been sent.</h3><p>We'll come back to you as soon as possible with a clear next step.</p><button type="button" onClick={() => setSent(false)}>Send another enquiry</button></div> : <>
           <div className="form-head"><h3>Tell us about your business</h3><p>Send a few details and we'll come back with a clear next step.</p></div>
           <div className="form-grid">
