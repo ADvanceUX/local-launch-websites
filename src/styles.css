@@ -242,6 +242,7 @@ footer { background: var(--cream); color: var(--navy); padding: 36px 0 24px; bor
 }
 
 @media (max-width: 720px) {
+  html { scroll-padding-top: 82px; }
   .container { width: min(100% - 28px, 1160px); }.section { padding: 58px 0; }
   header { height: 68px; }.menu-button { display: block; }
   nav { display: none; position: absolute; top: 68px; left: 0; right: 0; padding: 22px; background: white; border-bottom: 1px solid var(--line); box-shadow: 0 12px 25px rgba(7,30,47,.1); flex-direction: column; align-items: stretch; }
@@ -257,8 +258,18 @@ footer { background: var(--cream); color: var(--navy); padding: 36px 0 24px; bor
   .sample-nav { padding: 0 18px; grid-template-columns: 1fr auto; }.sample-nav span { display: none; }
   .sample-hero { grid-template-columns: 1fr; }.sample-hero-copy { padding: 45px 25px; }.sample-hero-image { min-height: 240px; grid-row: 1; }
   .sample-services { grid-template-columns: 1fr; padding: 25px 18px; }.sample-proof { padding: 20px; align-items: flex-start; flex-direction: column; gap: 10px; }
-  .process-grid { grid-template-columns: 1fr; gap: 30px; }.process-grid article { padding: 0 0 0 72px; }.process-num { position: absolute; left: 0; top: 0; }.process-line { height: calc(100% + 30px); width: 1px; left: 26px; top: 52px; right: auto; }.process-grid h3 { padding-top: 4px; }
-  .process-cta { align-items: flex-start; flex-wrap: wrap; }.process-cta .button { margin: 5px 0 0; width: 100%; }
+  .process-grid { grid-template-columns: 1fr; gap: 34px; margin-top: 42px; }
+  .process-grid article { min-height: 98px; padding: 0 0 0 72px; }
+  .process-grid article:first-child { padding-left: 72px; }
+  .process-grid article:last-child { padding-right: 0; }
+  .process-num { position: absolute; left: 0; top: 0; }
+  .process-line { height: calc(100% + 34px); width: 1px; left: 26px; top: 52px; right: auto; }
+  .process-grid h3 { padding-top: 4px; margin-bottom: 8px; }
+  .process-grid p { margin-bottom: 0; }
+  .process-cta { margin-top: 42px; padding: 22px 18px; align-items: flex-start; flex-direction: column; gap: 14px; }
+  .process-cta > svg { flex: 0 0 auto; }
+  .process-cta div { gap: 3px; }
+  .process-cta .button { margin: 3px 0 0; width: 100%; }
   .pricing-grid { grid-template-columns: 1fr; }.price-card.featured { order: -1; }.price-card ul { min-height: auto; }
   .about-visual { min-height: 420px; }.about-shape { width: 290px; height: 360px; left: 15px; }.about-note { bottom: 20px; }
   form { padding: 28px 20px; }.form-grid { grid-template-columns: 1fr; }.form-grid .full { grid-column: auto; }
